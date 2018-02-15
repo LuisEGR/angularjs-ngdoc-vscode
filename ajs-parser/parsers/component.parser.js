@@ -29,6 +29,7 @@ module.exports = class ComponentParser extends AJSParser {
 
   getComponentName(){
     let toks = this.path.split('/');
-    return toks[toks.length - 2];
+    let name = Util.toCammelCase(toks[toks.length - 2]);
+    return name;
   }
 }
