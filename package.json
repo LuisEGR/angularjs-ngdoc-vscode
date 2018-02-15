@@ -1,0 +1,46 @@
+{
+    "name": "angularjs-ngdoc-generator",
+    "displayName": "AngularJs ngDoc Generator",
+    "description": "Generate ngDocs for AngularJS modules, components, directives, services and filters.",
+    "version": "0.0.1",
+    "publisher": "LuisGonz",
+    "engines": {
+        "vscode": "^1.20.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:extension.ngDocModule",
+        "onCommand:extension.ngDocComponent",
+        "onCommand:extension.ngDocController",
+        "onCommand:extension.ngDocFunctionCtrl"
+    ],
+    "main": "./extension",
+    "contributes": {
+        "commands": [{
+          "command": "extension.ngDocModule",
+          "title": "ngDoc Module"
+        }, {
+          "command": "extension.ngDocComponent",
+          "title": "ngDoc Component"
+        }, {
+          "command": "extension.ngDocController",
+          "title": "ngDoc Controller"
+        }, {
+          "command": "extension.ngDocFunctionCtrl",
+          "title": "ngDoc Controller Function"
+        }]
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6",
+        "eslint": "^4.11.0",
+        "@types/node": "^7.0.43",
+        "@types/mocha": "^2.2.42"
+    }
+}
