@@ -2,48 +2,110 @@
 // Import the module and reference it with the alias vscode in your code below
 const vscode = require('vscode');
 const defaultDocs = require('./defaults.js');
+const AJSParser = require('./ajs-parser');
+const Util = require('./util');
 
+let editor;
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 function activate(context) {
-
+  
   // Use the console to output diagnostic information (console.log) and errors (console.error)
   // This line of code will only be executed once when your extension is activated
   console.log('Congratulations, your extension "angularjs-ngdoc-generator" is now active!');
-
-  let addNgDoc = (type) => {
-    const editor = vscode.window.activeTextEditor;
-    if(editor){
-      const position = editor.selection.active;
-      // let contenido = editor.document.getText();
-      // const ubicacionArchivo = editor.document.uri.path;
-      let lang = editor.document.languageId;
-      if(lang == 'javascript'){
-        editor.edit(editBuilder => {
-          editBuilder.insert(position, defaultDocs[type]);
-        });
-      }
-    }
-  }
-
-  let ngdocComponent = vscode.commands
-    .registerCommand('extension.ngDocComponent', () => {
-      addNgDoc('_component');
+  
+  let addText = (text) => {
+    // let lang = editor.document.languageId;
+    // if(lang == 'javascript'){
+    let position = editor.selection.active;
+    editor.edit(editBuilder => {
+      editBuilder.insert(position, text);
     });
+    // }
+  };
+  
+  // let addNgDoc = (type, data) => {
+  //   const position = editor.selection.active;
+  //   let ruta = vscode.workspace;
+  //   console.log("Ruta:", ruta);
+  //   // let contenido = editor.document.getText();
+  //   // const ubicacionArchivo = editor.document.uri.path;
+  //   let ngDocTemplate = defaultDocs[type];
+  //   ngDocTemplate.replace(/_MODULENAME_/g, data.moduleName);
+
+    
+  // }
+
 
   let ngdocModule = vscode.commands
     .registerCommand('extension.ngDocModule', () => {
-      addNgDoc('_module');
+      editor = vscode.window.activeTextEditor;
+      let contenido = editor.document.getText();
+      let modparser = new AJSParser.ModuleParser(contenido);
+      let moduleData = modparser.parse();
+      let ngDocTemplate = '';
+      ngDocTemplate = Util.processTemplate(defaultDocs._module, {
+        '_MODULENAME_': moduleData.moduleName
+      })
+      addText(ngDocTemplate);
     });
+
+
+  let ngdocComponent = vscode.commands
+    .registerCommand('extension.ngDocComponent', () => {
+      editor = vscode.window.activeTextEditor;
+      let contenido = editor.document.getText();
+      // console.log("Contenido:", contenido);
+      let comparser = new AJSParser.ComponentParser(contenido, editor.document.uri.path);
+      let componentData = comparser.parse();
+      console.log("COMP:", componentData);
+      let ngDocTemplate = '';
+      let bindingsComment = Util.generateBindingsParam(componentData.bindings);
+      ngDocTemplate = Util.processTemplate(defaultDocs._component, {
+        _BINDINGS_: bindingsComment,
+        _COMPONENT_NAME_: componentData.componentName,
+      })
+      addText(ngDocTemplate);
+    });
+
+ 
 
   let ngdocController = vscode.commands
     .registerCommand('extension.ngDocController', () => {
-      addNgDoc('_controller');
+      editor = vscode.window.activeTextEditor;
+      let contenido = editor.document.getText();
+      let contParser = new AJSParser.ControllerParser(contenido);
+      let controllerData = contParser.parse();
+      let ngDocTemplate = Util.processTemplate(defaultDocs._controller, {
+        _CONTROLLER_NAME_: controllerData.controllerName,
+      });
+      addText(ngDocTemplate);
     });
 
   let ngdocFunctionCtrl = vscode.commands
     .registerCommand('extension.ngDocFunctionCtrl', () => {
-      addNgDoc('_functionCtrl');
+      editor = vscode.window.activeTextEditor;
+      let position = editor.selection.active;
+      let contenido = editor.document.getText();
+      let contParser = new AJSParser.ControllerParser(contenido);
+      let controllerData = contParser.parse();
+      let lineFunction = editor.document.lineAt(position.line + 1);
+      let functionStr = lineFunction.text;
+      let functionParser = new AJSParser.FunctionParser(functionStr);
+      let functionData = functionParser.parse();
+      let spacesReq = lineFunction.firstNonWhitespaceCharacterIndex;
+      console.log("Posición:", position);
+      console.log("functionStr:", functionStr);
+      console.log("spacesReq:", spacesReq);
+      let ngDoc = Util.processTemplate(defaultDocs._functionCtrl, {
+        _CONTROLLER_NAME_: controllerData.controllerName,
+        _FUNCTION_NAME_: functionData.functionName
+      });
+      if(spacesReq > 0){
+        ngDoc = ngDoc.split('\n')
+          .join('\n' + ' '.repeat(spacesReq));
+      }
+      addText(ngDoc);
     });
 
   context.subscriptions.push(ngdocModule);

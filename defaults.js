@@ -1,18 +1,18 @@
 let _component = `
 /**
   * @ngdoc component
-  * @name moduleName.component:componentName
+  * @name moduleName.component:_COMPONENT_NAME_
+  * _BINDINGS_
   *
   * @description
   * description
   * 
-  * @param {type} param Description
 */`;
 
 let _module = `
 /**
   * @ngdoc overview
-  * @name moduleName.module:moduleNameChild
+  * @name _MODULENAME_.module:_MODULENAME_
   *
   * @description
   * description
@@ -20,8 +20,8 @@ let _module = `
   * @example
   *  <b>script.js</b>
   *  <pre>
-  *  import moduleName from './location...'
-  *  angular.module('myModule', [moduleName]);
+  *  import _MODULENAME_ from './location...'
+  *  angular.module('myModule', [_MODULENAME_]);
   *  </pre>
   * 
 */`;
@@ -30,7 +30,7 @@ let _controller = `
 /**
   * @this vm
   * @ngdoc controller
-  * @name moduleName.controller:controllerName
+  * @name moduleName.controller:_CONTROLLER_NAME_
   *
   * @description
   * description
@@ -38,17 +38,17 @@ let _controller = `
 
 let _functionCtrl = `
 /**
-* @ngdoc method
-* @name controllerName#onInit
-*
-* @methodOf
-* moduleName.controller:controllerName
-*
-* @description
-* Description
-*
-* @param {type} name description
-* @return {type} name description
+  * @ngdoc method
+  * @name _CONTROLLER_NAME_#_FUNCTION_NAME_
+  *
+  * @methodOf
+  * moduleName.controller:_CONTROLLER_NAME_
+  *
+  * @description
+  * Description
+  *
+  * @param {type} name description
+  * @return {type} name description
 */`;
 
 module.exports = {
