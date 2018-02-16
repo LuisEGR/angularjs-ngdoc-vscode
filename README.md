@@ -1,75 +1,56 @@
 # AngularJS ngDoc - VSCode Extension
 
-This extension will help you to documentate your angularjs project, this is still in progress so will be many major changes
+Generate ngDoc for AngularJS modules, components, controllers, controller functions, directives, filters, services.
+
+ATENTION
+
+This is a very new extensión and it's expected to have so many bugs, so be ready and don't forget to open an issue to solve any problem you have.
 
 ## Features
 
-Documentation for: 
+Base ngDoc for: 
 * [x] Modules
-* [x] Componentes  
-* [x] Controllers 
-* [x] Controller Functions 
-* [] Directives 
-* [] Filters
-* [] Services
-* [] Providers
+![Module ndDoc](images/module_demo.gif)
+---
+* [x] Component
+![Component ndDoc](images/component_demo.gif)
+  * WORKING:
+    * Default ngDoc generated
+    * Automatic component name detection from file folder name "my-component" => "myComponent"
+    * Automatic bindings name detection
+    * Automatic binding type detection
+  * TODO:
+    * Automatic module name detection
+---
+* [x] Controller 
+![Controller ndDoc](images/controller_demo.gif)
+  * WORKING:
+    * Default ngDoc generated
+    * Automatic controller name detection
+  * TODO:
+    * Automatic function params detection
+    * Anonymous arrow function (ES6)
+---
+* [x] Controller Function
+![Controller ndDoc](images/controller_demo.gif)
+  * WORKING:
+    * Default ngDoc generated
+    * Automatic function name detection
+  * TODO:
+    * Automatic function params detection
+    * Automatic function return detection
+---
+* [ ] Filter
+* [ ] Directive
+* [ ] Service
+* [ ] Provider
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+### 0.0.1
+First public version, consider many bugs are still ready to be finded, so don't be mad.
 
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on OSX or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on OSX or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (OSX) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+---
 
 **Enjoy!**

@@ -54,7 +54,7 @@ let _functionCtrl = `
 let _filter = `
 /**
   * @ngdoc filter
-  * @name moduleName.filter:filterName
+  * @name moduleName.filter:_FILTER_NAME_
   * @function
   *
   * @description
