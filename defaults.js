@@ -53,19 +53,19 @@ let _functionCtrl = `
 
 let _filter = `
 /**
-* @ngdoc filter
-* @name moduleName.filter:filterName
-* @function
-*
-* @description
-* Description...
-*
-* @param {type} name Description.
-*
-* @returns {type} description
-*
-* @example
-* example...
+  * @ngdoc filter
+  * @name moduleName.filter:filterName
+  * @function
+  *
+  * @description
+  * Description...
+  *
+  * @param {type} name Description.
+  *
+  * @returns {type} description
+  *
+  * @example
+  * example...
 */`;
 
 module.exports = {
