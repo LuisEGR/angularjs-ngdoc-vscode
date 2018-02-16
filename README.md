@@ -10,10 +10,10 @@ This is a very new extensión and it's expected to have so many bugs, so be read
 
 Base ngDoc for: 
 * [x] Modules
-![Module ndDoc](images/module_demo.gif)
+![Module ndDoc](./images/module_demo.gif)
 ---
 * [x] Component
-![Component ndDoc](images/component_demo.gif)
+![Component ndDoc](./images/component_demo.gif)
   * WORKING:
     * Default ngDoc generated
     * Automatic component name detection from file folder name "my-component" => "myComponent"
@@ -23,7 +23,7 @@ Base ngDoc for:
     * Automatic module name detection
 ---
 * [x] Controller 
-![Controller ndDoc](images/controller_demo.gif)
+![Controller ndDoc](./images/controller_demo.gif)
   * WORKING:
     * Default ngDoc generated
     * Automatic controller name detection
@@ -32,7 +32,7 @@ Base ngDoc for:
     * Anonymous arrow function (ES6)
 ---
 * [x] Controller Function
-![Controller ndDoc](images/controller_demo.gif)
+![Controller ndDoc](./images/controller_function_demo.gif)
   * WORKING:
     * Default ngDoc generated
     * Automatic function name detection
