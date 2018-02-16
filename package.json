@@ -14,7 +14,8 @@
         "onCommand:extension.ngDocModule",
         "onCommand:extension.ngDocComponent",
         "onCommand:extension.ngDocController",
-        "onCommand:extension.ngDocFunctionCtrl"
+        "onCommand:extension.ngDocFunctionCtrl",
+        "onCommand:extension.ngDocFilter"
     ],
     "main": "./extension",
     "contributes": {
@@ -30,6 +31,9 @@
         }, {
           "command": "extension.ngDocFunctionCtrl",
           "title": "ngDoc Controller Function"
+        }, {
+          "command": "extension.ngDocFilter",
+          "title": "ngDoc Filter"
         }]
     },
     "scripts": {

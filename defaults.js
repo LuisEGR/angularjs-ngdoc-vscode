@@ -51,9 +51,27 @@ let _functionCtrl = `
   * @return {type} name description
 */`;
 
+let _filter = `
+/**
+* @ngdoc filter
+* @name moduleName.filter:filterName
+* @function
+*
+* @description
+* Description...
+*
+* @param {type} name Description.
+*
+* @returns {type} description
+*
+* @example
+* example...
+*/`;
+
 module.exports = {
   _module, 
   _component, 
   _controller,
   _functionCtrl,
+  _filter,
 };

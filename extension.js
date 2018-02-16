@@ -24,19 +24,6 @@ function activate(context) {
     // }
   };
   
-  // let addNgDoc = (type, data) => {
-  //   const position = editor.selection.active;
-  //   let ruta = vscode.workspace;
-  //   console.log("Ruta:", ruta);
-  //   // let contenido = editor.document.getText();
-  //   // const ubicacionArchivo = editor.document.uri.path;
-  //   let ngDocTemplate = defaultDocs[type];
-  //   ngDocTemplate.replace(/_MODULENAME_/g, data.moduleName);
-
-    
-  // }
-
-
   let ngdocModule = vscode.commands
     .registerCommand('extension.ngDocModule', () => {
       editor = vscode.window.activeTextEditor;
@@ -108,10 +95,18 @@ function activate(context) {
       addText(ngDoc);
     });
 
+  let ngdocFilter = vscode.commands
+    .registerCommand('extension.ngDocFilter', () => {
+      editor = vscode.window.activeTextEditor;
+      let ngDocTemplate = defaultDocs._filter;
+      addText(ngDocTemplate);
+    });
+
   context.subscriptions.push(ngdocModule);
   context.subscriptions.push(ngdocComponent);
   context.subscriptions.push(ngdocController);
   context.subscriptions.push(ngdocFunctionCtrl);
+  context.subscriptions.push(ngdocFilter);
 }
 exports.activate = activate;
 
