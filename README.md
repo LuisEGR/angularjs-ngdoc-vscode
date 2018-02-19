@@ -52,19 +52,18 @@ Generate ngDoc comments for:
   
   * WORKING
     * [x] Default ngDoc generated
-    * [x] Automatic filter name detection
   * TODO:
+    * [ ] Automatic filter name detection
     * [ ] Automatic module name detection
     * [ ] Automatic filter params detection
     * [ ] Automatic filter return detection
 
 ---
 * [ ] Directive
-![Service ndDoc](./images/service_demo.gif)
+![Directive ndDoc](./images/directive_demo.gif)
  * WORKING
     * [x] Default ngDoc generated
   * TODO:
-    * [ ] Automatic imports required
     * [ ] Automatic directive name detection
     * [ ] Automatic scope detection
 ---
