@@ -88,14 +88,14 @@ let _directive = `
 /**
   * @ngdoc directive
   * @name _MODULE_NAME_.directive:_DIRECTIVE_NAME_ 
-  * @restrict 'AE'
+  * @restrict '_RESTRICT_'
   * @element ANY
-  * @priority 0
-  * @scope
+  * _META_SCOPE_
+  * _META_PRIORITY_
   * @description
   * Description...
   *
-  * @param {type} name Description.
+  * _BINDINGS_
   * 
   * @example
   * example...

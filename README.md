@@ -60,12 +60,14 @@ Generate ngDoc comments for:
 
 ---
 * [ ] Directive
-![Directive ndDoc](./images/directive_demo.gif)
+![Directive ndDoc](./images/directive_demo_2.gif)
  * WORKING
     * [x] Default ngDoc generated
-  * TODO:
-    * [ ] Automatic directive name detection
-    * [ ] Automatic scope detection
+    * [x] Automatic directive name detection
+    * [x] Automatic scope detection
+    * [ ] Automatic restrict detection
+    * [ ] Automatic module name detection (from folder name).
+
 ---
 ## Service  
 ![Service ndDoc](./images/service_demo.gif)
@@ -75,23 +77,28 @@ Generate ngDoc comments for:
   * TODO:
     * [ ] Automatic imports required
     * [ ] Automatic service name detection
+    
 ---
 * [ ] Provider
 
 
 ## Release Notes
-
-### 0.0.3
+### 0.1.0 - 19-FEB-2018
+* Automatic directive name detection
+* Automatic scope bindings detection
+* Automatic restrict detection
+* Automatic module name detection
+### 0.0.3 - 19-FEB-2018
 * Static params added on ngDoc for directive
 * Static params added on ngDoc for directive
 * Static description added on ngDoc for directive
 * Static description added on ngDoc for service
-### 0.0.2
+### 0.0.2 - 19-FEB-2018
 * Service static ngDoc added
 * Directive static ngDoc added
 * Filter static ngDoc added
 
-### 0.0.1
+### 0.0.1 - 15-FEB-2018
 * First public version, consider many bugs are still ready to be finded, so don't be mad.
 
 ---

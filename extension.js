@@ -42,10 +42,8 @@ function activate(context) {
     .registerCommand('extension.ngDocComponent', () => {
       editor = vscode.window.activeTextEditor;
       let contenido = editor.document.getText();
-      // console.log("Contenido:", contenido);
       let comparser = new AJSParser.ComponentParser(contenido, editor.document.uri.path);
       let componentData = comparser.parse();
-      console.log("COMP:", componentData);
       let ngDocTemplate = '';
       let bindingsComment = Util.generateBindingsParam(componentData.bindings);
       ngDocTemplate = Util.processTemplate(defaultDocs._component, {
@@ -81,9 +79,6 @@ function activate(context) {
       let functionParser = new AJSParser.FunctionParser(functionStr);
       let functionData = functionParser.parse();
       let spacesReq = lineFunction.firstNonWhitespaceCharacterIndex;
-      console.log("Posición:", position);
-      console.log("functionStr:", functionStr);
-      console.log("spacesReq:", spacesReq);
       let ngDoc = Util.processTemplate(defaultDocs._functionCtrl, {
         _CONTROLLER_NAME_: controllerData.controllerName,
         _FUNCTION_NAME_: functionData.functionName
@@ -112,7 +107,21 @@ function activate(context) {
   let ngdocDirective = vscode.commands
     .registerCommand('extension.ngDocDirective', () => {
       editor = vscode.window.activeTextEditor;
-      let ngDocTemplate = defaultDocs._directive;
+      let contenido = editor.document.getText();
+      let dirParser = new AJSParser.DirectiveParser(contenido, editor.document.uri.path);
+      let directiveData = dirParser.parse();
+      let bindingsComment = Util.generateBindingsParam(directiveData.scope);
+      
+      let ngDocTemplate = Util.processTemplate(defaultDocs._directive, {
+        _MODULE_NAME_: directiveData.moduleName,
+        _DIRECTIVE_NAME_: directiveData.directiveName,
+        _BINDINGS_: bindingsComment,
+        _RESTRICT_: directiveData.restrict,
+        _META_SCOPE_: directiveData.metas['scope'],
+        _META_PRIORITY_: directiveData.metas['priority'],
+      });
+
+      // let ngDocTemplate = defaultDocs._directive;
       addText(ngDocTemplate);
     });
     
