@@ -1,5 +1,11 @@
 # AngularJS ngDoc - VSCode Extension
 
+<center>
+
+[![Version](https://vsmarketplacebadge.apphb.com/version-short/Luis.angularjs-ngdoc-generator.svg)](https://marketplace.visualstudio.com/items?itemName=Luis.angularjs-ngdoc-generator) [![Version](https://vsmarketplacebadge.apphb.com/installs/Luis.angularjs-ngdoc-generator.svg)](https://marketplace.visualstudio.com/items?itemName=Luis.angularjs-ngdoc-generator)
+[![apm](https://img.shields.io/apm/l/vim-mode.svg)]()  
+
+</center>
 Generate ngDoc comments for:
 * Modules
 * Components
