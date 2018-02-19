@@ -1,14 +1,15 @@
 # AngularJS ngDoc - VSCode Extension
 
-Generate ngDoc for AngularJS modules, components, controllers, controller functions, directives, filters, services.
-
-ATENTION
-
-This is a very new extensión and it's expected to have so many bugs, so be ready and don't forget to open an issue to solve any problem you have.
+Generate ngDoc comments for:
+* Modules
+* Components
+* Controllers
+* Controller Functions
+* Directives 
+* Filters
+* Services
 
 ## Features
-
-Base ngDoc for: 
 ## Module
 ![Module ndDoc](./images/module_demo.gif)
 
@@ -80,6 +81,12 @@ Base ngDoc for:
 
 
 ## Release Notes
+
+### 0.0.3
+* Static params added on ngDoc for directive
+* Static params added on ngDoc for directive
+* Static description added on ngDoc for directive
+* Static description added on ngDoc for service
 ### 0.0.2
 * Service static ngDoc added
 * Directive static ngDoc added

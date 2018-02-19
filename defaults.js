@@ -72,17 +72,33 @@ let _service = `
 /**
   * @ngdoc service
   * @name moduleName.serviceName
-  * @requires $rootScope
+  * @requires $http
+  * @requires $q
+  * 
+  * @description
+  * Description...
+  *
+  * @param {type} name Description.
+  * 
+  * @example
+  * example...
 **/`;
 
 let _directive = `
 /**
   * @ngdoc directive
   * @name _MODULE_NAME_.directive:_DIRECTIVE_NAME_ 
-  * @restrict 'AC'
+  * @restrict 'AE'
   * @element ANY
   * @priority 0
   * @scope
+  * @description
+  * Description...
+  *
+  * @param {type} name Description.
+  * 
+  * @example
+  * example...
 **/`;
 
 module.exports = {
