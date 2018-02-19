@@ -102,11 +102,27 @@ function activate(context) {
       addText(ngDocTemplate);
     });
 
+  let ngdocService = vscode.commands
+    .registerCommand('extension.ngDocService', () => {
+      editor = vscode.window.activeTextEditor;
+      let ngDocTemplate = defaultDocs._service;
+      addText(ngDocTemplate);
+    });
+
+  let ngdocDirective = vscode.commands
+    .registerCommand('extension.ngDocDirective', () => {
+      editor = vscode.window.activeTextEditor;
+      let ngDocTemplate = defaultDocs._directive;
+      addText(ngDocTemplate);
+    });
+    
   context.subscriptions.push(ngdocModule);
   context.subscriptions.push(ngdocComponent);
   context.subscriptions.push(ngdocController);
   context.subscriptions.push(ngdocFunctionCtrl);
   context.subscriptions.push(ngdocFilter);
+  context.subscriptions.push(ngdocService);
+  context.subscriptions.push(ngdocDirective);
 }
 exports.activate = activate;
 

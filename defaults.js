@@ -68,10 +68,29 @@ let _filter = `
   * example...
 */`;
 
+let _service = `
+/**
+  * @ngdoc service
+  * @name moduleName.serviceName
+  * @requires $rootScope
+**/`;
+
+let _directive = `
+/**
+  * @ngdoc directive
+  * @name _MODULE_NAME_.directive:_DIRECTIVE_NAME_ 
+  * @restrict 'AC'
+  * @element ANY
+  * @priority 0
+  * @scope
+**/`;
+
 module.exports = {
   _module, 
   _component, 
   _controller,
   _functionCtrl,
   _filter,
+  _service,
+  _directive,
 };

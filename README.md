@@ -9,47 +9,84 @@ This is a very new extensión and it's expected to have so many bugs, so be read
 ## Features
 
 Base ngDoc for: 
-* [x] Modules
+## Module
 ![Module ndDoc](./images/module_demo.gif)
+
+* WORKING:
+    * [x] Default ngDoc generated
 ---
-* [x] Component
+## Component
 ![Component ndDoc](./images/component_demo.gif)
+  
   * WORKING:
-    * Default ngDoc generated
-    * Automatic component name detection from file folder name "my-component" => "myComponent"
-    * Automatic bindings name detection
-    * Automatic binding type detection
+    * [x] Default ngDoc generated
+    * [x] Automatic component name detection from file folder name "my-component" => "myComponent"
+    * [x] Automatic bindings name detection
+    * [x] Automatic binding type detection
   * TODO:
-    * Automatic module name detection
+    * [ ] Automatic module name detection
 ---
-* [x] Controller 
+## Controller 
 ![Controller ndDoc](./images/controller_demo.gif)
+  
   * WORKING:
-    * Default ngDoc generated
-    * Automatic controller name detection
+    * [x] Default ngDoc generated
+    * [x] Automatic controller name detection
   * TODO:
-    * Automatic function params detection
-    * Anonymous arrow function (ES6)
+    * [ ] Automatic function params detection
+    * [ ] Anonymous arrow function (ES6)
 ---
-* [x] Controller Function
+## Controller Function
 ![Controller ndDoc](./images/controller_function_demo.gif)
+  
   * WORKING:
-    * Default ngDoc generated
-    * Automatic function name detection
+    * [x] Default ngDoc generated
+    * [x] Automatic function name detection
   * TODO:
-    * Automatic function params detection
-    * Automatic function return detection
+    * [ ] Automatic function params detection
+    * [ ] Automatic function return detection
 ---
-* [ ] Filter
+## Filter
+![Filter ndDoc](./images/filter_demo.gif)
+  
+  * WORKING
+    * [x] Default ngDoc generated
+    * [x] Automatic filter name detection
+  * TODO:
+    * [ ] Automatic module name detection
+    * [ ] Automatic filter params detection
+    * [ ] Automatic filter return detection
+
+---
 * [ ] Directive
-* [ ] Service
+![Service ndDoc](./images/service_demo.gif)
+ * WORKING
+    * [x] Default ngDoc generated
+  * TODO:
+    * [ ] Automatic imports required
+    * [ ] Automatic directive name detection
+    * [ ] Automatic scope detection
+---
+## Service  
+![Service ndDoc](./images/service_demo.gif)
+
+  * WORKING
+    * [x] Default ngDoc generated
+  * TODO:
+    * [ ] Automatic imports required
+    * [ ] Automatic service name detection
+---
 * [ ] Provider
 
 
 ## Release Notes
+### 0.0.2
+* Service static ngDoc added
+* Directive static ngDoc added
+* Filter static ngDoc added
 
 ### 0.0.1
-First public version, consider many bugs are still ready to be finded, so don't be mad.
+* First public version, consider many bugs are still ready to be finded, so don't be mad.
 
 ---
 

@@ -2,7 +2,7 @@
     "name": "angularjs-ngdoc-generator",
     "displayName": "AngularJs ngDoc Generator",
     "description": "Generate ngDocs for AngularJS modules, components, directives, services and filters.",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "Luis",
     "engines": {
         "vscode": "^1.20.0"
@@ -15,7 +15,9 @@
         "onCommand:extension.ngDocComponent",
         "onCommand:extension.ngDocController",
         "onCommand:extension.ngDocFunctionCtrl",
-        "onCommand:extension.ngDocFilter"
+        "onCommand:extension.ngDocFilter",
+        "onCommand:extension.ngDocService",
+        "onCommand:extension.ngDocDirective"
     ],
     "main": "./extension",
     "contributes": {
@@ -34,6 +36,12 @@
         }, {
           "command": "extension.ngDocFilter",
           "title": "ngDoc Filter"
+        }, {
+          "command": "extension.ngDocService",
+          "title": "ngDoc Service"
+        }, {
+          "command": "extension.ngDocDirective",
+          "title": "ngDoc Directive"
         }]
     },
     "scripts": {
