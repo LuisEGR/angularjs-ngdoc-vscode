@@ -1,4 +1,7 @@
 # Change Log
+
+#### 0.1.1 - 19-FEB-2018
+* Icon created and assigned
 #### 0.1.0 - 19-FEB-2018
 * Automatic directive name detection
 * Automatic scope bindings detection
