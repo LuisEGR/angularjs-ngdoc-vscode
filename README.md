@@ -65,8 +65,8 @@ Generate ngDoc comments for:
     * [x] Default ngDoc generated
     * [x] Automatic directive name detection
     * [x] Automatic scope detection
-    * [ ] Automatic restrict detection
-    * [ ] Automatic module name detection (from folder name).
+    * [x] Automatic restrict detection
+    * [x] Automatic module name detection (from folder name).
 
 ---
 ## Service  
