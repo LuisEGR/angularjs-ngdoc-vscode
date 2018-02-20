@@ -13,7 +13,7 @@ module.exports = class ComponentParser extends AJSParser {
 
   getBindings() {
     let fileData = this.scriptStr;
-    // console.log("Getting bindings:", fileData);
+    if(fileData == '') return {};
     fileData = fileData.replace(/^[ ]*[*/].*/gm, '');
     let fromPos = fileData.search('bindings');
     let toPos = fromPos;
@@ -29,6 +29,7 @@ module.exports = class ComponentParser extends AJSParser {
 
   getComponentName(){
     let toks = this.path.split('/');
+    if(toks.length < 2) return 'componentName';
     let name = Util.toCammelCase(toks[toks.length - 2]);
     return name;
   }

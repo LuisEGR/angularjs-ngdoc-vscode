@@ -10,6 +10,7 @@ module.exports = class FunctionParser extends AJSParser {
   }
 
   getFunctionName(){
+    console.log("Getting function name:", this.scriptStr);
     let name = this.scriptStr.replace(/\s+|[=()>{]|(vm.)|function\(.+/g, '');
     return name;
   }

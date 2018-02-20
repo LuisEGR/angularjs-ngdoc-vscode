@@ -1,7 +1,7 @@
 let _component = `
 /**
   * @ngdoc component
-  * @name moduleName.component:_COMPONENT_NAME_
+  * @name MODULE_NAME.component:_COMPONENT_NAME_
   * _BINDINGS_
   *
   * @description
@@ -30,7 +30,7 @@ let _controller = `
 /**
   * @this vm
   * @ngdoc controller
-  * @name moduleName.controller:_CONTROLLER_NAME_
+  * @name MODULE_NAME.controller:_CONTROLLER_NAME_
   *
   * @description
   * description
@@ -42,7 +42,7 @@ let _functionCtrl = `
   * @name _CONTROLLER_NAME_#_FUNCTION_NAME_
   *
   * @methodOf
-  * moduleName.controller:_CONTROLLER_NAME_
+  * MODULE_NAME.controller:_CONTROLLER_NAME_
   *
   * @description
   * Description
@@ -54,7 +54,7 @@ let _functionCtrl = `
 let _filter = `
 /**
   * @ngdoc filter
-  * @name moduleName.filter:_FILTER_NAME_
+  * @name MODULE_NAME.filter:_FILTER_NAME_
   * @function
   *
   * @description
@@ -71,7 +71,7 @@ let _filter = `
 let _service = `
 /**
   * @ngdoc service
-  * @name moduleName.serviceName
+  * @name MODULE_NAME.SERVICE_NAME
   * @requires $http
   * @requires $q
   * 

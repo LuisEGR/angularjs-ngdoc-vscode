@@ -74,12 +74,22 @@ function activate(context) {
       let contenido = editor.document.getText();
       let contParser = new AJSParser.ControllerParser(contenido);
       let controllerData = contParser.parse();
-      let lineFunction = editor.document.lineAt(position.line + 1);
-      let functionStr = lineFunction.text;
-      let functionParser = new AJSParser.FunctionParser(functionStr);
-      let functionData = functionParser.parse();
-      let spacesReq = lineFunction.firstNonWhitespaceCharacterIndex;
-      let ngDoc = Util.processTemplate(defaultDocs._functionCtrl, {
+      let functionData;
+      let ngDoc;
+      let spacesReq;
+      if(editor.document.lineCount < 2 || position.line + 1 >= editor.document.lineCount){
+        functionData = {
+          functionName: 'FUNCTION_NAME',
+        }
+      }else{
+        let lineFunction = editor.document.lineAt(position.line + 1);
+        let functionStr = lineFunction.text;
+        let functionParser = new AJSParser.FunctionParser(functionStr);
+        functionData = functionParser.parse();
+        spacesReq = lineFunction.firstNonWhitespaceCharacterIndex;
+      }
+      
+      ngDoc = Util.processTemplate(defaultDocs._functionCtrl, {
         _CONTROLLER_NAME_: controllerData.controllerName,
         _FUNCTION_NAME_: functionData.functionName
       });
@@ -120,8 +130,6 @@ function activate(context) {
         _META_SCOPE_: directiveData.metas['scope'],
         _META_PRIORITY_: directiveData.metas['priority'],
       });
-
-      // let ngDocTemplate = defaultDocs._directive;
       addText(ngDocTemplate);
     });
     

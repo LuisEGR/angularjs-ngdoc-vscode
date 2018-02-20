@@ -2,7 +2,7 @@
     "name": "angularjs-ngdoc-generator",
     "displayName": "AngularJs ngDoc Generator",
     "description": "Generate ngDocs for AngularJS modules, components, directives, services and filters.",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "publisher": "Luis",
     "icon": "images/icon.png",
     "engines": {

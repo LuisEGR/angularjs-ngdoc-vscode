@@ -46,13 +46,14 @@ module.exports = class DirectiveParser extends AJSParser {
 
   getModuleName(){
     let toks = this.path.split('/');
+    if(toks.length < 2) return 'moduleName';
     let name = Util.toCammelCase(toks[toks.length - 2]);
     return name;
   }
 
   getDirectiveName(){
     let name = this.scriptStr.match(/^\s*.*(function)*\(\)/gm);
-    name = name[0] || '';
+    name = name && name[0] ? name[0] : 'DIRECTIVE_NAME';
     name = name.replace(/\s|\(|\)|export|function|default/g, '');
     return name;
   }

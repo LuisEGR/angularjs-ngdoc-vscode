@@ -11,9 +11,9 @@ module.exports = class ModuleParser extends AJSParser {
   getModuleName() {
     let moduleName; 
     moduleName = this.scriptStr.match(/^.*[ ]*.module\(.*$/gm);
-    moduleName = moduleName.length ? moduleName[0] : '';
+    moduleName = moduleName && moduleName.length ? moduleName[0] : '';
     moduleName = moduleName.match(/['"`]{1}[a-zA-Z]+['"`]{1}/g);
-    moduleName = moduleName.length ? moduleName[0] : '';
+    moduleName = moduleName && moduleName.length ? moduleName[0] : 'MODULE_NAME';
     moduleName = moduleName.replace(/['"`]/g, '');
     return moduleName;
   }

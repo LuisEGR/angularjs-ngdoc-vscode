@@ -1,4 +1,3 @@
-let Util = require('./util');
 let AJSParser = require('./base.parser');
 
 module.exports = class ControllerParser extends AJSParser {
@@ -11,7 +10,7 @@ module.exports = class ControllerParser extends AJSParser {
 
   getControllerName(){
     let name = this.scriptStr.match(/^\s*.*(function)*\(\)/gm);
-    name = name[0] || '';
+    name = name && name[0] ? name[0] : 'CONTROLLER_NAME';
     name = name.replace(/\s|\(|\)|export|function|default/g, '');
     return name;
   }

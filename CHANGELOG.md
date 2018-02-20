@@ -1,5 +1,8 @@
 # Change Log
 
+#### 0.1.2 - 20-FEB-2018
+* Fixed: Error using the extension on empty files.
+
 #### 0.1.1 - 19-FEB-2018
 * Icon created and assigned
 #### 0.1.0 - 19-FEB-2018
