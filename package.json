@@ -59,5 +59,9 @@
     "repository": {
       "type": "git",
       "url": "https://github.com/LuisEGR/angularjs-ngdoc-vscode.git"
+    },
+    "galleryBanner": {
+      "color": "#263238",
+      "theme": "dark"
     }
 }
