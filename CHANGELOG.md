@@ -1,5 +1,8 @@
 # Change Log
 
+#### 0.1.4 - 12-MAR-2018
+* Function name detection removed in ngDoc controller 
+* Function name detection removed in ngDoc Controller function
 #### 0.1.2 - 20-FEB-2018
 * Fixed: Error using the extension on empty files.
 

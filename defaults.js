@@ -72,14 +72,10 @@ let _service = `
 /**
   * @ngdoc service
   * @name MODULE_NAME.SERVICE_NAME
-  * @requires $http
-  * @requires $q
   * 
   * @description
   * Description...
   *
-  * @param {type} name Description.
-  * 
   * @example
   * example...
 **/`;

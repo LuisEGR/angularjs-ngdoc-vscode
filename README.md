@@ -50,8 +50,8 @@ Generate ngDoc comments for:
   
   * WORKING:
     * [x] Default ngDoc generated
-    * [x] Automatic function name detection
   * TODO:
+    * [ ] Automatic function name detection
     * [ ] Automatic function params detection
     * [ ] Automatic function return detection
 ---

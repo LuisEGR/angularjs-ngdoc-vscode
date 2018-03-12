@@ -62,7 +62,8 @@ function activate(context) {
       let contParser = new AJSParser.ControllerParser(contenido);
       let controllerData = contParser.parse();
       let ngDocTemplate = Util.processTemplate(defaultDocs._controller, {
-        _CONTROLLER_NAME_: controllerData.controllerName,
+        // _CONTROLLER_NAME_: controllerData.controllerName,
+        _CONTROLLER_NAME_: '_CONTROLLER_NAME_',
       });
       addText(ngDocTemplate);
     });
@@ -90,8 +91,10 @@ function activate(context) {
       }
       
       ngDoc = Util.processTemplate(defaultDocs._functionCtrl, {
-        _CONTROLLER_NAME_: controllerData.controllerName,
-        _FUNCTION_NAME_: functionData.functionName
+        // _CONTROLLER_NAME_: controllerData.controllerName,
+        _CONTROLLER_NAME_: '_CONTROLLER_NAME_',
+        // _FUNCTION_NAME_: functionData.functionName
+        _FUNCTION_NAME_: '_FUNCTION_NAME_'
       });
       if(spacesReq > 0){
         ngDoc = ngDoc.split('\n')
